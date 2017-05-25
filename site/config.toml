@@ -1,0 +1,34 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Don San Blog"
+theme = "hugo-uno"
+
+#
+# languageCode = "en-us"
+# contentdir = "content"
+# publishdir = "public"
+# builddrafts = false
+# # baseurl = "http://fredrikloch.me/"
+# canonifyurls = true
+# #title = "Fredrik Loch"
+# author = "dsantmajor"
+# copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+#
+#
+# [indexes]
+#    category = "categories"
+#    tag = "tags"
+# [Params]
+#   AuthorName = "dsantmajor"
+#   github = "dsantmajor"
+#   bitbucket = "dsantmajor"
+#   flickr = "dsantmajor"
+#   twitter = "dsantmajor"
+#   email = "mail@dontechlabs.com"
+#   description = ""
+#   cv = "/pages/cv"
+#   legalnotice = "/pages/legal-notice"
+#   muut = "dsantmajor"
+#   linkedin = "Don Santmajor"
+#   # cover = "/images/background-cover.jpg"
+#   # logo = "/img/logo-1.jpg"
