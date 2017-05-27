@@ -70,3 +70,6 @@ I chose to use apline and few apk commands
 - externalise ENV paramaters
 - introduce NGNIX reverse proxy [Jason Wilder's Repo ](https://github.com/jwilder/nginx-proxy)
 - [automated-nginx-reverse-proxy-for-docker](http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/)
+
+
+## Show Adam how it works
