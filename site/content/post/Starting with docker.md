@@ -7,6 +7,18 @@ menu = "main"
 title = "Starting with docker"
 
 +++
+### <span style="color:blue"> **Important Links** </span>
+
+<span style="color:blue">some **This is Blue italic.** text</span>
+
+<span style="color:red"> **This is Red Bold.** </span>
+
+
+### Important Links
+
+#### DockerCon 2017 all video links
+
+https://blog.docker.com/2017/05/dockercon-2017-session-videos-now-live/
 
 ## Docker Networking
 
