@@ -7,7 +7,7 @@ menu = "main"
 title = "Building a Hugo container"
 
 +++
-
+[Home](http://localhost:1313/)
 ## Installation on Mac
 
 I installed Hugo on mac using brew

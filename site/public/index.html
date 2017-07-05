@@ -1,0 +1,216 @@
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.18" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Don San Blog &middot; Don San Blog </title>
+    
+    <link rel="stylesheet" type="text/css" href="http://example.org//css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://example.org//css/lightGallery.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="http://example.org/index.xml" rel="alternate" type="application/rss+xml" title="Don San Blog" />
+    
+    <script src="http://example.org//js/jquery.min.js"></script>
+    <script src="http://example.org//js/main.min.js">
+    </script>
+</head>
+
+    <body>
+        <div id="scriptHeader">
+    <span class="mobile btn-mobile-menu">
+            <i class="fa fa-bars btn-mobile-menu__icon"></i>
+            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
+    </span>
+    <header class="
+        
+        
+                panel-cover
+        
+        " >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="http://example.org//"  title="link to homepage for Don San Blog">Don San Blog</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  This site is built using <a href="http://gohugo.io">hugo</a> and the theme is built by <a href="http://fredrikloch.me">Fredrik</a> if you enjoy it, it is available at <a href="https://github.com/SenjinDarashiva/hugo-uno">github</a>  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="http://example.org/#blog" title="link to Don San Blog blog" class="blog-button">Blog</a> </li></br>
+                            
+                            
+                       </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation">    </br>    </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+</div>
+<noscript>
+    <style>
+        #scriptHeader {display:none;}
+        .navigation-wrapper{
+            display: block;
+            top: 0;
+        }
+    </style>
+
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url()">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content"> 
+                    <h1 class="panel-cover__title panel-title">
+                        <a href="http://example.org//"  title="link to homepage for Don San Blog">Don San Blog</a>
+                    </h1>
+                    <hr class="panel-cover__divider" />
+                    <p class="panel-cover__description">  This site is built using <a href="http://gohugo.io">hugo</a> and the theme is built by <a href="http://fredrikloch.me">Fredrik</a> if you enjoy it, it is available at <a href="https://github.com/SenjinDarashiva/hugo-uno">github</a>  </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                    <div class="navigation-wrapper">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a href="http://example.org//#blog" title="link to Don San Blog blog" class="blog-button">Blog</a> </li></br>
+                                
+                                
+                           </ul>
+                        </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation">    </br>    </ul>
+</nav>
+ </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay"></div>
+        </div>
+    </header>
+</noscript>
+
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <section id="main">
+                    <div>
+                        
+                            
+                                <article class="post">
+<header>
+<h2><a href="http://example.org/post/Installing%20Syncthing/">Installing Syncthing </a> </h2>
+<div class="post-meta">Tue, May 30, 2017 - Read in 1 Min </div>
+</header>
+<div class="summary">
+    Home
+Installation on Mac I installed Syncthing as a docker container on mac
+$ docker pull syncthing/syncthing $ mkdir ~/code/syncthing $ cd ~/code/syncthing $ mkdir build $ cd build $ touch Docker-compose.yml  My Docker-compose file looks like below This is what was I did
+version: '2' services: syncthing: image: syncthing/syncthing:latest ports: - &quot;8384:8384&quot; - &quot;22000:22000&quot; volumes: - &quot;./st-cfg:/var/syncthing/config&quot; - &quot;./st-sync:/var/syncthing/Sync&quot; restart: unless-stopped  My Folder Structure
+. └── build ├── docker-compose.
+</div>
+<footer>
+<a href='http://example.org/post/Installing%20Syncthing/'><nobr>Read more →</nobr></a>
+</footer>
+</article>
+
+
+                            
+                        
+                            
+                                <article class="post">
+<header>
+<h2><a href="http://example.org/post/Dream-Infra-as-a-code/">Dream Infra as a code </a> </h2>
+<div class="post-meta">Sat, May 27, 2017 - Read in 1 Min </div>
+</header>
+<div class="summary">
+    The Vision  I would love to build an environment that is agnostic enough to be deployed anywhere with zero modifications . An environment that is scalable on demand . Resilient to attacks ,build with highest standards of security. Flexible enough to adapt to change.
+Agnostic What I mean by agnostic ? It means that i can spin a minimal viable stack on a laptop ,a physical infrastructure ,a cloud provider like AWS ,Azure ,Google Cloud Platform.
+</div>
+<footer>
+<a href='http://example.org/post/Dream-Infra-as-a-code/'><nobr>Read more →</nobr></a>
+</footer>
+</article>
+
+
+                            
+                        
+                            
+                                <article class="post">
+<header>
+<h2><a href="http://example.org/post/Building%20a%20Hugo%20container/">Building a Hugo container </a> </h2>
+<div class="post-meta">Thu, May 25, 2017 - Read in 1 Min </div>
+</header>
+<div class="summary">
+    Home
+Installation on Mac I installed Hugo on mac using brew #! $ brew update $ brew install hugo  Setup a Hugo Site under 2 mins I followed the tutorial on the Hugo site
+$ cd ~/site $ hugo new site . $ hugo new post/welcome.md $ git clone https://github.com/SenjinDarashiva/hugo-uno.git themes/hugo-uno $ hugo server -w $ hugo new post/'Starting with docker'.md $ hugo new post/'Building a Hugo container'.md  The above created few folder structuer as below
+</div>
+<footer>
+<a href='http://example.org/post/Building%20a%20Hugo%20container/'><nobr>Read more →</nobr></a>
+</footer>
+</article>
+
+
+                            
+                        
+                            
+                                <article class="post">
+<header>
+<h2><a href="http://example.org/post/Starting%20with%20docker/">Starting with docker </a> </h2>
+<div class="post-meta">Thu, May 25, 2017 - Read in 1 Min </div>
+</header>
+<div class="summary">
+    Home
+Important Links  some This is Blue italic. text
+This is Red Bold. 
+Important Links DockerCon 2017 all video links https://blog.docker.com/2017/05/dockercon-2017-session-videos-now-live/
+Docker Networking Docker in 1.2 has introduced some awesome features
+Commands
+docker network
+ERRORS If you get the below error
+ Error when trying to run docker-compose up. &ldquo;oci runtime error: container_linux.go:247&hellip;&rdquo; #4039
+ you can solve it by applying the chmod +x ,i.e making it executable
+</div>
+<footer>
+<a href='http://example.org/post/Starting%20with%20docker/'><nobr>Read more →</nobr></a>
+</footer>
+</article>
+
+
+                            
+                        
+                            
+                                <article class="post">
+<header>
+<h2><a href="http://example.org/post/welcome/">welcome </a> </h2>
+<div class="post-meta">Thu, May 25, 2017 - Read in 1 Min </div>
+</header>
+<div class="summary">
+    Welcome on the journey of self discovery and belief that you can do it. One victory at a time We can do it. Just do it. When you want it badly enough the entire universe comes together to help you achive it.
+</div>
+<footer>
+<a href='http://example.org/post/welcome/'><nobr>Read more →</nobr></a>
+</footer>
+</article>
+
+
+                            
+                        
+                    </div>
+                    </br>
+                    <h4>
+                        <a href="http://example.org//post/">Archive</a>
+                    </h4>
+                </section>
+            </div>
+        </div>
+        <footer class="footer"></footer>
+
+        
+    </body>
+</html>

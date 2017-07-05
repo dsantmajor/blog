@@ -6,7 +6,7 @@ theme = "hugo-uno"
 #
 # languageCode = "en-us"
 # contentdir = "content"
-# publishdir = "public"
+publishdir = "docs"
 # builddrafts = false
 # # baseurl = "http://fredrikloch.me/"
 # canonifyurls = true
