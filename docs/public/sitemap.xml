@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://example.org/post/Installing%20Syncthing/</loc>
+    <lastmod>2017-05-30T10:59:24+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/Dream-Infra-as-a-code/</loc>
+    <lastmod>2017-05-27T23:31:24+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/Building%20a%20Hugo%20container/</loc>
+    <lastmod>2017-05-25T16:31:24+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/Starting%20with%20docker/</loc>
+    <lastmod>2017-05-25T16:26:25+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/welcome/</loc>
+    <lastmod>2017-05-25T16:03:45+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/development/</loc>
+    <lastmod>2017-05-30T10:59:24+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/development/</loc>
+    <lastmod>2017-05-30T10:59:24+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2017-05-30T10:59:24+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/golang/</loc>
+    <lastmod>2017-05-30T10:59:24+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/golang/</loc>
+    <lastmod>2017-05-30T10:59:24+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/</loc>
+    <lastmod>2017-05-30T10:59:24+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

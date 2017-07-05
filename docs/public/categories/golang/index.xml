@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Golang on Don San Blog </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://example.org/categories/golang/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Installing Syncthing</title>
+      <link>http://example.org/post/Installing%20Syncthing/</link>
+      <pubDate>Tue, 30 May 2017 10:59:24 &#43;1000</pubDate>
+      
+      <guid>http://example.org/post/Installing%20Syncthing/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/&#34;&gt;Home&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;installation-on-mac&#34;&gt;Installation on Mac&lt;/h2&gt;
+
+&lt;p&gt;I installed Syncthing as a docker container on mac&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ docker pull syncthing/syncthing
+$ mkdir ~/code/syncthing
+$ cd ~/code/syncthing
+$ mkdir build
+$ cd build
+$ touch Docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;my-docker-compose-file-looks-like-below&#34;&gt;My Docker-compose file looks like below&lt;/h2&gt;
+
+&lt;p&gt;This is what was I did&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+version: &#39;2&#39;
+services:
+  syncthing:
+    image: syncthing/syncthing:latest
+    ports:
+      - &amp;quot;8384:8384&amp;quot;
+      - &amp;quot;22000:22000&amp;quot;
+    volumes:
+      - &amp;quot;./st-cfg:/var/syncthing/config&amp;quot;
+      - &amp;quot;./st-sync:/var/syncthing/Sync&amp;quot;
+    restart: unless-stopped
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;My Folder Structure&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+.
+└── build
+    ├── docker-compose.yml
+    ├── st-cfg
+    │   ├── cert.pem
+    │   ├── config.xml
+    │   ├── csrftokens.txt
+    │   ├── https-cert.pem
+    │   ├── https-key.pem
+    │   ├── index-v0.14.0.db
+    │   │   ├── 000002.ldb
+    │   │   ├── 000003.log
+    │   │   ├── CURRENT
+    │   │   ├── LOCK
+    │   │   ├── LOG
+    │   │   └── MANIFEST-000004
+    │   └── key.pem
+    └── st-sync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;creating-a-syncthing-docker-image&#34;&gt;Creating a Syncthing docker image&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Sites used to build the docker-compose&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/syncthing/syncthing/&#34;&gt;Syncthing Docker Hub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;todo&#34;&gt;TODO&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Persistent storage or docker volumes&lt;/li&gt;
+&lt;li&gt;Improve the security architecture of Docker using overlay networking ( backend /frontend)&lt;/li&gt;
+&lt;li&gt;externalise ENV paramaters&lt;/li&gt;
+&lt;li&gt;introduce NGNIX reverse proxy &lt;a href=&#34;https://github.com/jwilder/nginx-proxy&#34;&gt;Jason Wilder&amp;rsquo;s Repo &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/&#34;&gt;automated-nginx-reverse-proxy-for-docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dream Infra as a code</title>
+      <link>http://example.org/post/Dream-Infra-as-a-code/</link>
+      <pubDate>Sat, 27 May 2017 23:31:24 &#43;1000</pubDate>
+      
+      <guid>http://example.org/post/Dream-Infra-as-a-code/</guid>
+      <description>
+
+&lt;h3 id=&#34;span-style-color-blue-the-vision-span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt; The Vision &lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;I would love to build an environment that is agnostic enough to be deployed anywhere with zero modifications . An environment that is scalable on demand . Resilient to attacks ,build with highest standards of security. Flexible enough to adapt to change.&lt;/p&gt;
+
+&lt;h4 id=&#34;span-style-color-blue-agnostic-span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt; Agnostic&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p&gt;What I mean by agnostic ? It means that i can spin a minimal viable stack on a laptop ,a physical infrastructure ,a cloud provider like AWS ,Azure ,Google Cloud Platform.&lt;/p&gt;
+
+&lt;h4 id=&#34;span-style-color-blue-scalable-span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt; Scalable&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p&gt;As load increases or decreases it can spin up or down environments on demands ,
+If topology changes are required it is easy to adapt.&lt;/p&gt;
+
+&lt;h4 id=&#34;span-style-color-blue-secure-span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt; Secure&lt;/span&gt;&lt;/h4&gt;
+
+&lt;h4 id=&#34;span-style-color-blue-flexible-span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt; Flexible&lt;/span&gt;&lt;/h4&gt;
+
+&lt;h4 id=&#34;span-style-color-blue-disaster-resilient-phoenix-servers-span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt; Disaster resilient &lt;em&gt;Phoenix Servers&lt;/em&gt;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p&gt;That is we can tear it down, something like a chaos monkey ,and it can rise from the ashes wihout any manual interventions or changes&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building a Hugo container</title>
+      <link>http://example.org/post/Building%20a%20Hugo%20container/</link>
+      <pubDate>Thu, 25 May 2017 16:31:24 &#43;1000</pubDate>
+      
+      <guid>http://example.org/post/Building%20a%20Hugo%20container/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/&#34;&gt;Home&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;installation-on-mac&#34;&gt;Installation on Mac&lt;/h2&gt;
+
+&lt;p&gt;I installed Hugo on mac using brew
+&lt;!-- ```javascript
+brew update
+brew install hugo
+```bash --&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!
+$ brew update
+$ brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;setup-a-hugo-site-under-2-mins&#34;&gt;Setup a Hugo Site under 2 mins&lt;/h2&gt;
+
+&lt;p&gt;I followed the tutorial on the Hugo site&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+$ cd ~/site
+$ hugo new site .
+$ hugo new post/welcome.md
+$ git clone https://github.com/SenjinDarashiva/hugo-uno.git themes/hugo-uno
+$ hugo server -w
+$ hugo new post/&#39;Starting with docker&#39;.md
+$ hugo new post/&#39;Building a Hugo container&#39;.md
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above created few folder structuer as below&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+.
+├── archetypes
+├── config.toml
+├── content
+│   └── post
+├── data
+├── layouts
+├── static
+└── themes
+    ├── hugo-theme-docdock
+    └── hugo-uno
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;creating-a-hugo-docker-image&#34;&gt;Creating a hugo docker image&lt;/h2&gt;
+
+&lt;p&gt;I chose to use apline and few apk commands&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sites used to build the docker-compose&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/compose/compose-file/#build&#34; title=&#34;BUILD&#34;&gt;Docker-compose&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet&#34; title=&#34;Cheat Sheet&#34;&gt;MarkDown Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jojomi/docker-hugo&#34;&gt;Jojo Jims references &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/publysher/hugo/~/dockerfile/&#34;&gt; Referenced publyshers dockerfile &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/compose/compose-file/#build&#34;&gt;https://docs.docker.com/compose/compose-file/#build&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;todo&#34;&gt;TODO&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;externalise ENV paramaters&lt;/li&gt;
+&lt;li&gt;introduce NGNIX reverse proxy &lt;a href=&#34;https://github.com/jwilder/nginx-proxy&#34;&gt;Jason Wilder&amp;rsquo;s Repo &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/&#34;&gt;automated-nginx-reverse-proxy-for-docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Starting with docker</title>
+      <link>http://example.org/post/Starting%20with%20docker/</link>
+      <pubDate>Thu, 25 May 2017 16:26:25 &#43;1000</pubDate>
+      
+      <guid>http://example.org/post/Starting%20with%20docker/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/&#34;&gt;Home&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;span-style-color-blue-important-links-span&#34;&gt;&lt;span style=&#34;color:blue&#34;&gt; &lt;strong&gt;Important Links&lt;/strong&gt; &lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:blue&#34;&gt;some &lt;strong&gt;This is Blue italic.&lt;/strong&gt; text&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&#34;color:red&#34;&gt; &lt;strong&gt;This is Red Bold.&lt;/strong&gt; &lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;important-links&#34;&gt;Important Links&lt;/h3&gt;
+
+&lt;h4 id=&#34;dockercon-2017-all-video-links&#34;&gt;DockerCon 2017 all video links&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.docker.com/2017/05/dockercon-2017-session-videos-now-live/&#34;&gt;https://blog.docker.com/2017/05/dockercon-2017-session-videos-now-live/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;docker-networking&#34;&gt;Docker Networking&lt;/h2&gt;
+
+&lt;p&gt;Docker in 1.2 has introduced some awesome features&lt;/p&gt;
+
+&lt;p&gt;Commands&lt;/p&gt;
+
+&lt;p&gt;docker network&lt;/p&gt;
+
+&lt;h4 id=&#34;errors&#34;&gt;ERRORS&lt;/h4&gt;
+
+&lt;p&gt;If you get the below error&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Error when trying to run docker-compose up. &amp;ldquo;oci runtime error:
+container_linux.go:247&amp;hellip;&amp;rdquo; #4039&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;you can solve it by applying the chmod +x ,i.e making it executable&lt;/p&gt;
+
+&lt;h5 id=&#34;solution&#34;&gt;Solution&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# RUN chmod +x startup.sh
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
