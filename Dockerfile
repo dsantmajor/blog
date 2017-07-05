@@ -1,6 +1,7 @@
 FROM alpine:latest
 RUN apk update && apk add hugo
 COPY ./site /site
+COPY ./docs /docs
 COPY ./scripts/startup.sh /tmp/startup.sh
 RUN chmod +x /tmp/startup.sh
 CMD ["/tmp/startup.sh"]
